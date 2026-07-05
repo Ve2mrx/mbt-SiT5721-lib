@@ -71,7 +71,7 @@ class SiT5721:
     def read_SiT_operation(self):
         # From SiTime datasheet for SiT5721, rev 1.0
         # Read less critical values
-        # -- 0xAB, Resonator Temp., 4 bytes, Float, Degrees C, R
+        # -- 0xA1, Resonator Temp., 4 bytes, Float, Degrees C, R
         self.temperature_float = float(''.join([str(item) for item in
                                                 struct.unpack('f', bytes(
                                                     self.bus.read_i2c_block_data(self.address, 0xA1, 4)))
